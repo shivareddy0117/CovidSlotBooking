@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Beneficiaries</title>
+</head>
+<body>
+    <h1>All Beneficiaries</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>SSN</th>
+            <th>Phone</th>
+        </tr>
+        {% for beneficiary in beneficiaries %}
+        <tr>
+            <td>{{ beneficiary.name }}</td>
+            <td>{{ beneficiary.dob }}</td>
+            <td>{{ beneficiary.ssn }}</td>
+            <td>{{ beneficiary.phone }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register Beneficiary</title>
+</head>
+<body>
+    <h1>Register Beneficiary</h1>
+    <form id="registrationForm" action="/register" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="dob">DOB (format: dd-mm-yyyy):</label><br>
+        <input type="text" id="dob" name="dob"><br>
+        <label for="ssn">SSN:</label><br>
+        <input type="text" id="ssn" name="ssn"><br>
+        <label for="phone">Phone:</label><br>
+        <input type="text" id="phone" name="phone"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var data = {
+            name: document.getElementById('name').value,
+            dob: document.getElementById('dob').value,
+            ssn: document.getElementById('ssn').value,
+            phone: document.getElementById('phone').value,
+        };
+
+        fetch('/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(function(response) {
+            if (!response.ok) {
+                throw new Error('HTTP error ' + response.status);
+            }
+            return response.json();
+        }).then(function(data) {
+            console.log(data);
+            // Redirect to a new page after successful submission
+            window.location.href = '/beneficiaries';
+        }).catch(function(error) {
+            console.log('Fetch failed: ', error);
+        });
+    });
+    </script>
+</body>
+</html>

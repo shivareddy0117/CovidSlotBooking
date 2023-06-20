@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Appointment</title>
+</head>
+<body>
+    <h1>Book Appointment</h1>
+    <form id="appointmentForm">
+        <label for="beneficiary_id">Beneficiary ID:</label><br>
+        <input type="number" id="beneficiary_id" name="beneficiary_id"><br>
+        <label for="date">Date (format: dd-mm-yyyy):</label><br>
+        <input type="text" id="date" name="date"><br>
+        <label for="time_slot">Time Slot:</label><br>
+        <input type="text" id="time_slot" name="time_slot"><br>
+        <label for="dose">Dose (1 or 2):</label><br>
+        <input type="number" id="dose" name="dose"><br>
+        <label for="center">Center (CenterA, CenterB, CenterC, CenterD):</label><br>
+        <input type="text" id="center" name="center"><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script src="submit.js"></script>
+</body>
+</html>

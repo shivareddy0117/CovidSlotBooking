@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Appointments</title>
+</head>
+<body>
+    <h1>All Appointments</h1>
+    <table>
+        <tr>
+            <th>Beneficiary ID</th>
+            <th>Date</th>
+            <th>Time Slot</th>
+            <th>Dose</th>
+            <th>Center</th>
+        </tr>
+        {% for appointment in appointments %}
+        <tr>
+            <td>{{ appointment.beneficiary_id }}</td>
+            <td>{{ appointment.date }}</td>
+            <td>{{ appointment.time_slot }}</td>
+            <td>{{ appointment.dose }}</td>
+            <td>{{ appointment.center }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
